@@ -1,0 +1,176 @@
+/*reset des marges*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/*header uniquement pour la page historique, choix personnel*/
+header {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/*background-image représentant des olanche de bois, pas mis no-repeat pour que tout le fond de l'appli soit couver*/
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  font-family: fantasy, Sans-Serif;
+  background-image: url("https://i.postimg.cc/j5H68rRY/Bois-refuge.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff1d0;
+  font-size: 1.2rem;
+}
+/*positionnement des formulaires*/
+.main {
+  margin: 0 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+/*Augmentation de la taille des champs pour une meilleur UI*/
+#mnt {
+  font-size: 1.2rem;
+  font-family: fantasy, Sans-Serif;
+}
+#cor {
+  font-size: 1.2rem;
+  font-family: fantasy, Sans-Serif;
+}
+/*positionnement des boutons + et -*/
+.btn {
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/*boutons en forme de pièces d'or avec tête de mort façon dessin animé pirate*/
+.mouv {
+  border: solid 1px black;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-size: 150%;
+  background-position: center;
+  box-shadow: 2px 4px 6px rgba(0,0,0,0.4);
+  color: white;
+}
+
+#ajouter {
+  background-image: url("https://i.postimg.cc/fknNMX6Z/791ca3f679bb784ebb6a8a1e5a55d66c.jpg");
+}
+#deduire {
+  font-size: 3.4rem;
+  background-image: url("https://i.postimg.cc/fknNMX6Z/791ca3f679bb784ebb6a8a1e5a55d66c.jpg");
+}
+/*effet lors de l'appui, expliqué par Neo*/
+.mouv:active {
+  transform: scale(0.94);
+  filter: brightness(0.9);
+}
+/* boutons reset du solde et historuque en forme de parchemin*/
+.com {
+  /* Supprime tout style natif */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border: none;            /* pas de contour */
+  background: url("https://i.postimg.cc/bwGT5hgy/61u-Qi-ICeiy-L-AC-AIweblab1006854-T4-FMavif-SF1050-1050-3x-Top-Right-10-10-PQ64.avif") no-repeat center center;
+  background-size: cover;  /* l'image remplit le bouton */
+  background-color: transparent; /* transparent si l'image ne couvre pas tout */
+  
+  /* Taille et texte */
+  height: 132px;
+  width: 105px;
+  font-size: 0.9rem;
+  /* Retours visuels */
+  outline: none;           /* pas de contour focus */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  font-family: fantasy, Sans-Serif;
+}
+
+.com:active {
+  transform: scale(0.96);
+  filter: brightness(0.9);
+}
+.commande {
+  margin-top: 20px;
+  height: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+/* Confirmer le reset.*/
+/* Fond semi-transparent derrière la banderole */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  z-index: 999;       /* Sous la banderole mais au-dessus du site */
+  display: none;
+}
+
+/* Banderole */
+.confirm-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("https://i.postimg.cc/VsxgTLCb/drapeau-pirate-simple.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+  height: 250px;
+  z-index: 1000;      /* Passe au-dessus de tout */
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  display: none;
+}
+
+/* Boutons */
+#confirm-btn,
+#cancel-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#cancel-btn {
+  background: red;
+}
+
+/* Footer sticky en bas */
+footer {
+  margin-top: auto;
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff1d0;
+  border-top: 2px solid rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+}

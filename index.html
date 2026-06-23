@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Coffre Pirate</title>
+  </head>
+  <body>
+    <main class="main">
+      <h2 id="solde"></h2>
+      <label for="mnt">Entrez un montant à ajouter ou à déduire.</label>
+        <input id="mnt" type="number" placeholder="Montant">
+          <label for="cor">Entrez ici ce qui correspond à la sommes du montant.</label>
+          <input id="cor" type="text" placeholder="Ex: Gazole, cinéma etc...">
+    </main>
+    <section class="btn">
+      <button type="button" class="mouv" id="ajouter">+</button>
+      <button type="button" class="mouv" id="deduire">-</button>
+    </section>
+    <section class="commande">
+      <button class="com" id="reset">Reset</button>
+       <button class="com" id="histo">Historique</button>
+    </section>
+    <div id="overlay"></div>
+
+<div id="confirm-reset" class="confirm-box">
+  <button id="confirm-btn">Confirmer</button>
+  <button id="cancel-btn">Annuler</button>
+</div>
+<footer>
+  <p>&copy; 2026 Coffre Pirate — Gère ton butin! 🏴‍☠️ Vincent-Boutaïg-Tous droits réservés.</p>
+</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
