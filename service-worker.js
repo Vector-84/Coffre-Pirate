@@ -1,11 +1,13 @@
-const CACHE_NAME = "mon-compte-cache-v1";
+const CACHE_NAME = "mon-compte-cache-v2";
 const urlsToCache = [
   "./",
   "./index.html",
   "./historique.html",
   "./script.js",
   "./style.css",
-  "./manifest.json"
+  "./manifest.json",
+  "./icon.png",
+  "./icon-512.png"
 ];
 
 // Installation du service worker
@@ -13,7 +15,7 @@ self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(urlsToCache);
-    })
+    }).then(() => self.skipWaiting())
   );
 });
 
@@ -24,7 +26,7 @@ self.addEventListener("activate", event => {
       Promise.all(
         keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
       )
-    )
+    ).then(() => self.clients.claim())
   );
 });
 
